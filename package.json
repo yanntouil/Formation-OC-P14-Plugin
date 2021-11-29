@@ -1,7 +1,10 @@
 {
   "name": "projet-14-plugin",
+  "author": "Yann Touil",
   "version": "0.1.0",
+  "homepage": "https://github.com/yanntouil/OC-P14-plugin.git",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -11,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && SET NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "rm -rf dist && SET NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,13 +37,19 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "babel-cli": "^6.26.0"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "files": [ "dist", "README.md" ],
+  "files": [
+    "src/lib",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yanntouil/OC-P14-plugin.git"
+    "url": "git+https://github.com/yanntouil/OC-P14-plugin.git"
   }
 }
