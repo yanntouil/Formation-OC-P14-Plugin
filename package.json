@@ -1,7 +1,7 @@
 {
   "name": "projet-14-plugin",
   "author": "Yann Touil",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/yanntouil/OC-P14-plugin.git",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

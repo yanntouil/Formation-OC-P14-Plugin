@@ -17,6 +17,12 @@ Object.defineProperty(exports, "AlertContent", {
     return _Alert.AlertContent;
   }
 });
+Object.defineProperty(exports, "AlertContext", {
+  enumerable: true,
+  get: function get() {
+    return _Alert.AlertContext;
+  }
+});
 Object.defineProperty(exports, "AlertIcon", {
   enumerable: true,
   get: function get() {
