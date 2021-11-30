@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Getting Started
+The `projet-14-plugin` as its name suggests, is a plugins developed as part of my OpenClassRooms training program.
+This plugin is not magic, this plugin does not make coffee, but if you want to have coffee with me we can make an arrangement 👌
+We still haven't answered the question "but what does this plugin do" ... ... It's quite simply a React plugin allowing to display an alert, for more information go to the section "How the plugin works"
+## Installation
+```
+$ npm install --save projet-14-plugin
+$ yarn add projet-14-plugin
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### How the plugin works
 
-## Available Scripts
+**Import module:**
+```jsx
+import Alert, { AlertActions, AlertContent, AlertIcon, AlertTitle } from 'projet-14-plugin/dist'
+```
 
-In the project directory, you can run:
+**Create your state in your component:**
+```jsx
+const [mySuperBrightAlert, setMySuperBrightAlert] = useState(false)
+```
 
-### `npm start`
+**Render your alert in your component:**
+```jsx
+    return (
+        <>
+            <Alert name="my-super-bright-alert" show={mySuperBrightAlert} setShow={setMySuperBrightAlert}>
+                <AlertIcon IconComponent={GreatStarSVG} color="info" />
+                <AlertTitle>This is my super bright alert</AlertTitle>
+                <AlertContent>Don't forget to follow me on my github account</AlertContent>
+                <AlertActions>
+                    <button type="button" onClick={() => setMySuperBrightAlert(false)}>It was famous</button>
+                </AlertActions>
+            </Alert>
+        </>
+    )
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**`<Alert/>` params:**
+- name: *id* of your alert title use to define *Aria*
+- showClose: Boolean use to show or hide cross close button (`true` by default)
+- show: Boolean state use to show and hide your alert
+- setShow: function that updates your state
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**`<AlertIcon/>` params:**
+- IconComponent: svg component use inside alert icon 
+  Import your svg component as 
+  ```jsx
+  import { ReactComponent as GreatStarSVG } from '../assets/images/icons/great-star.svg'
+  ```
+- color: svg ring color base on Bootstrap colors `['primary', 'danger', 'warning', 'success', 'info']` (`'primary'` by default)
 
-### `npm test`
+### More about this plugin
+To know more about this plugin or on my work, do not hesitate to contact me on my main networks
+[Twitter](https://twitter.com/TouilYann) - [Linkedin](https://www.linkedin.com/in/yann-touil-ab7696128/) - [GitHub](https://github.com/yanntouil)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
