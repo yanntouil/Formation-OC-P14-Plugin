@@ -3,6 +3,11 @@
   "author": "Yann Touil",
   "version": "0.1.5",
   "homepage": "https://github.com/yanntouil/OC-P14-plugin.git",
+  "tags": [
+    "react",
+    "modal",
+    "dialog"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.15.1",
